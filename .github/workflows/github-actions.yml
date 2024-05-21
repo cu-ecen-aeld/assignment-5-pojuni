@@ -23,5 +23,5 @@ jobs:
             run: ./full-test.sh
           - name: Cleanup
             if: always()
-            #run: |
+            run: |
              # ssh-add -D
