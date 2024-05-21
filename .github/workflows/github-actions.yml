@@ -15,12 +15,12 @@ jobs:
           - name: Checkout submodules
             run: git submodule update --init --recursive
           - name: webfactory/ssh-agent@v0.5.3
-            run: 
+            run: git submodule update --init --recursive
           - name: Run full test
             env:
               GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
             run: ./full-test.sh
           - name: Cleanup
             if: always()
-            run: 
-             # ssh-add -D
+            run: git submodule update --init --recursive
+             
